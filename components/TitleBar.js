@@ -5,9 +5,9 @@ function TitleBar() {
   return (
     <StyledHeader>
       <h1>Tourio</h1>
-      <Image
+      <StyledLogo
         src={
-          "https://images.unsplash.com/photo-1506792006437-256b665541e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
+          "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=717&q=80"
         }
         alt={"Logo"}
         width={30}
@@ -16,6 +16,10 @@ function TitleBar() {
     </StyledHeader>
   );
 }
+
+const StyledLogo = styled(Image)`
+  border-radius: 50%;
+`;
 
 const StyledHeader = styled.header`
   display: flex;
