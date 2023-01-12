@@ -2,8 +2,15 @@ import Head from "next/head";
 import cards from "../db.json";
 import Card from "../components/Card";
 import styled from "styled-components";
+import useSWR from "swr";
 
 export default function HomePage() {
+  const { data: attractions, isLoading, error } = useSWR("./api/places");
+
+  if (error) {
+    return <h1>{error.message}</h1>;
+  }
+
   return (
     <>
       <Head>
@@ -13,15 +20,19 @@ export default function HomePage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StyledList>
-        {cards.map((card) => (
-          <li key={card.id}>
-            <Card
-              name={card.name}
-              location={card.location}
-              image={card.image}
-            />
-          </li>
-        ))}
+        {isLoading ? (
+          <h2>Loading...</h2>
+        ) : (
+          attractions.map((attraction) => (
+            <li key={attraction.id}>
+              <Card
+                name={attraction.name}
+                location={attraction.location}
+                image={attraction.image}
+              />
+            </li>
+          ))
+        )}
       </StyledList>
     </>
   );
