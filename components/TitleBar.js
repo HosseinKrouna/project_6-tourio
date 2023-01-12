@@ -27,8 +27,9 @@ const StyledHeader = styled.header`
   left: 0;
   top: 0;
   z-index: 2;
-  width: 100vw;
+  width: 95vw;
   background-color: white;
+  padding: 0 20px;
 `;
 
 export default TitleBar;
