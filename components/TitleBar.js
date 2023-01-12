@@ -23,6 +23,12 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100vw;
+  background-color: white;
 `;
 
 export default TitleBar;
