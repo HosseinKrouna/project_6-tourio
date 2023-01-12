@@ -7,6 +7,8 @@ import useSWR from "swr";
 export default function HomePage() {
   const { data: attractions, isLoading, error } = useSWR("./api/places");
 
+  console.log(attractions);
+
   if (error) {
     return <h1>{error.message}</h1>;
   }
