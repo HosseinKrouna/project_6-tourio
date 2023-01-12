@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Card({ name, location, image }) {
   return (
     <StyledWrapper>
-      <Image src={image} width={300} height={300} alt={name} />
+      <StyledImage src={image} width={300} height={300} alt={name} />
       <StyledName>{name}</StyledName>
       <StyledContainer>
         <span>Location</span>
@@ -13,6 +13,10 @@ function Card({ name, location, image }) {
     </StyledWrapper>
   );
 }
+
+const StyledImage = styled(Image)`
+  border-radius: 10px;
+`;
 
 const StyledName = styled.h2`
   left: 5px;
